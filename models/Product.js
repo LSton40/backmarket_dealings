@@ -1,6 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-// const { DataTypes, DataTypes, DataTypes } = require('sequelize/types');
-// const { DataTypes } = require('sequelize/types');
 const sequelize = require('../config/connection');
 
 class Product extends Model {}
@@ -22,13 +20,10 @@ Product.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 10,
-      valdiate: {
+      validate: {
         isNumeric: true
       }
-    },
-    // category_id: {
-    //   type: DataTypes.INTEGER
-    // }
+    }
   },
   {
     sequelize: sequelize,
