@@ -1,6 +1,4 @@
 const { Model, DataTypes } = require('sequelize');
-// const { DataTypes, DataTypes } = require('sequelize/types/index.js');
-// const { DataTypes } = require('sequelize/types');
 
 const sequelize = require('../config/connection.js');
 
