@@ -6,7 +6,8 @@
     "sequelize": "^6.21.3"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
   "name": "ecommerce_chal",
   "version": "1.0.0",
