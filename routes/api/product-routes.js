@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
-    category_id: req.body.categoryId,
+    category_id: req.body.category_id,
     tag_id: req.body.tagIds
   })
   .then((product) => {
@@ -60,7 +60,7 @@ router.put('/:id', (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
-    category_id: req.body.categoryId,
+    category_id: req.body.category_id,
     tag_id: req.body.tagIds
   },
     {
@@ -85,10 +85,11 @@ router.put('/:id', (req, res) => {
           };
         });
       // figure out which ones to remove
+      // console.log(productTags);
       const productTagsToRemove = productTags
         .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
         .map(({ id }) => id);
-
+        console.log(productTagsToRemove);
       // run both actions
       return Promise.all([
         ProductTag.destroy({ where: { id: productTagsToRemove } }),
