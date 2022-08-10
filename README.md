@@ -1,6 +1,14 @@
 # Backmarket Dealings: Ecommerce App
 
+By Logan Sutton
+
 ## Description
+
+This Express served Sequelize database permits a user to view and modify a database comprised of three associated tables: `Category`, `Tag`, and `Product`. Product has a many-to-many relationship with Tag while Category has a one-to-many relationship with Product.
+
+It is based upon starter code provided by another developer; I only created the table associations, specified the Models, and added the appropriate Sequelize methods. The database is seeded with code provided by the original developer.
+
+Using an interface such as Insomnia, the user may view all items belonging to Categories, Tags, and Products, may view an individual item by id number, may create a new item for any of these three database tables, may update any existing field within these database tables, or may delete an item from any of the three database tables.
 
 [Link to video walkthrough](https://drive.google.com/file/d/1f_fWPobmePWA4NG2ewzWWKMjU-jlTzEy/view)
 
@@ -16,14 +24,14 @@
 
 ## Installation  
     
-This README project requires the installation of Node.js and the Inquirer 8.2.4 NPM, running in an appropriate command line terminal.  
+This app requires the installation of Node.js, Express.js, MySQL, and Sequelize, and is tested and interfaced in the walkthrough video using Insomnia.
 
 ## Usage  
-Once the appropriate supporting software is installed, open the command line terminal and navigate to the folder where the index.js file is located. Run the command line node index.js to activate the command line prompt to begin generating the README file.  
+Once the appropriate supporting software is installed, source the schema.sql database, then run the command `npm run seed` in a command line to seed the database. Then, run `npm start` to initialize the server. Using Insomnia, set the localhost (default 3001) and set the `/api` route for all illustrated routes.
 
 ## License  
     
-This project is licensed under the terms of [MIT License](https://spdx.org/licenses/MIT.html)  
+All rights reserved.
 
 Copyright (c) 2022 Logan Sutton.  
 
