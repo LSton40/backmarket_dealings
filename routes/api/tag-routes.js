@@ -3,6 +3,7 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 // The `/api/tags` endpoint
 
+//GET route to find all Tags, including the associated Products
 router.get('/', (req, res) => {
    Tag.findAll({
     include: Product
@@ -13,6 +14,7 @@ router.get('/', (req, res) => {
     })
 });
 
+//GET route to find a Tag by ID, including the associated Products
 router.get('/:id', (req, res) => {
    Tag.findByPk(req.params.id, {
     include: Product
@@ -22,6 +24,7 @@ router.get('/:id', (req, res) => {
     })
 });
 
+//POST route to create a new Tag
 router.post('/', (req, res) => {
   Tag.create({
     tag_name: req.body.tag_name
@@ -31,10 +34,9 @@ router.post('/', (req, res) => {
     })
 });
 
+//PUT route to update an existing Tag
 router.put('/:id', (req, res) => {
-  // update a tag's name by its `id` value
-
-   Tag.update(req.body, {
+  Tag.update(req.body, {
     where: {
       id: req.params.id
     }
@@ -44,9 +46,8 @@ router.put('/:id', (req, res) => {
     })
 });
 
+//DELETE route to delete an existing Tag
 router.delete('/:id', (req, res) => {
-  // delete on tag by its `id` value
-
    Tag.destroy({
     where: {
       id: req.params.id
